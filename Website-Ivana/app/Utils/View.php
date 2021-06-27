@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Utils;
-
 class View {
     private static function getContentView($view){
         $file = __DIR__.'/../../View/'.$view.'.html';
