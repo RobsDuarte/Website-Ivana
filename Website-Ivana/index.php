@@ -2,6 +2,12 @@
 
 require __DIR__."/vendor/autoload.php";
 
-use App\Controller\Home;
+use App\Http\Router;
 
-echo Home::getHome();
+define('URL','http://localhost/projetos/Website-Ivana');
+
+$obRouter = new Router(URL);
+
+include __DIR__."/App/Routes/Pages.php";
+
+$obRouter->run()->sendResponse();
