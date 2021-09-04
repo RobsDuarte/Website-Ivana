@@ -19,4 +19,4 @@ $obRouter = new Router(URL);
 include __DIR__."/App/Routes/Pages.php";
 
 //imprime a resposta do servidor
-$obRouter->run()->sendResponse();
+echo $obRouter->run()->sendResponse();
