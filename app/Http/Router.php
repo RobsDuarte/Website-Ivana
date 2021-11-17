@@ -41,6 +41,7 @@ class Router
         $this->request = new Request();
         $this->url     = $url;
         $this->setPrefix();
+        
     }     
 
     /**
@@ -50,6 +51,7 @@ class Router
     {
         $parseUrl = parse_url($this->url) ?? '';
         $this->prefix = $parseUrl['path'];
+        
     }
     
     /**
@@ -116,16 +118,15 @@ class Router
     }
 
     /**
-     * Método responsavel por retornar a uri sem prefixo
+     * Método responsavel por retornar a uri sem prefixo 
      *
      * @return array
      */
     private function getUri()
     {
-        $uri = $this->request->getUri();
-
-        $explode_uri = strlen($this->prefix) ? explode($this->prefix,$uri) : [$uri];
-        return end($explode_uri);
+        $uri = $this->request->getUri();               
+        $explode_uri = strlen($this->prefix) ? explode($this->prefix,$uri) : [$uri];        
+        return end($explode_uri);        
     }
     /**
      * Método responsável por retornar os dados da rota atual

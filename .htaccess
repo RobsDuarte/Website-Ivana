@@ -3,4 +3,4 @@ RewriteEngine on
 
 # REGRA DE REWRITE TUDO PARA INDEX
 RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteRule ^(.*)$ ./Website-Ivana/index.php [QSA,NC]
+RewriteRule ^(.*)$ ./index.php [QSA,NC]

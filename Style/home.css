@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script:wght@700&family=Fruktur&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap");
 *, *::before, *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -13,6 +16,8 @@ html {
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   line-height: 1.6;
+  min-height: 100vh;
+  background-color: #f9e5f9;
 }
 
 p {
@@ -23,7 +28,7 @@ p {
           hyphens: auto;
 }
 
-:is(header, .firstSection, .buttons, .conteudo-dinamico, .price-table) {
+:is(.firstSection, .buttons, .conteudo-dinamico, .price-table) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,34 +37,37 @@ p {
 }
 
 header {
-  background-color: black;
-  color: white;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ecb2ec), to(#f9e5f9));
+  background-image: linear-gradient(to bottom, #ecb2ec, #f9e5f9);
+  color: darkorchid;
+  height: 40vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
 }
 
 header h1 {
-  font-weight: 900;
   text-align: center;
+  font-family: 'Fruktur', cursive;
+  text-transform: uppercase;
 }
 
-header p {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.figure img {
-  width: inherit;
-  height: 100%;
-}
-
-.figure figure {
-  width: clamp(300px, 100%, 400px);
+header div {
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+  text-transform: lowercase;
 }
 
 .firstSection {
@@ -70,6 +78,62 @@ header p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.firstArticle {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  -webkit-box-shadow: 4px 4px 5px 2px darkorchid;
+          box-shadow: 4px 4px 5px 2px darkorchid;
+  width: 92vw;
+  padding: 5px;
+}
+
+.firstArticle h2 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+}
+
+.firstArticle figure {
+  display: none;
+}
+
+.firstArticle figure img {
+  -webkit-box-shadow: 5px 5px 5px 2px grey;
+          box-shadow: 5px 5px 5px 2px grey;
+}
+
+.secondArticle {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  -webkit-box-shadow: -4px 4px 5px 2px darkorchid;
+          box-shadow: -4px 4px 5px 2px darkorchid;
+  width: 95vw;
+  padding-left: 20px;
+}
+
+.secondArticle h2 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+}
+
+.secondArticle figure img {
+  width: clamp(100px, 3vw, 150px);
+}
+
+.secondArticle div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .buttons {
@@ -86,20 +150,11 @@ header p {
   background: none;
   border: none;
   cursor: pointer;
-  font-weight: 600;
   font-size: 1rem;
-}
-
-.buttons figure {
-  max-width: 80px;
-  height: 70px;
-}
-
-.buttons img {
-  height: inherit;
-  -o-object-fit: fill;
-     object-fit: fill;
-  max-width: inherit;
+  color: #f9e5f9;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 3px darkorchid, 0 0 5px darkorchid;
 }
 
 .buttons div {
@@ -120,6 +175,34 @@ header p {
   font-size: 1.5rem;
 }
 
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-family: 'Zen Antique', serif;
+}
+
+.content div {
+  font-size: 1rem;
+  color: #f9e5f9;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 3px darkorchid, 0 0 5px darkorchid;
+  margin-left: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .conteudo-dinamico {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -135,48 +218,34 @@ header p {
 
 .conteudo-dinamico article {
   gap: 1rem;
-  width: 100%;
+  width: 100vw;
   display: inherit;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.conteudo-dinamico article h2 {
+  text-align: center;
+}
+
+.conteudo-dinamico article figure {
+  display: none;
 }
 
 .conteudo-dinamico p {
   margin: .5em;
 }
 
-.price-table {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.price-table p {
-  margin: .5em;
-}
-
-.price-table h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
 footer {
-  background-color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9e5f9), to(darkorchid));
+  background-image: linear-gradient(#f9e5f9, darkorchid);
   display: block;
 }
 
 footer section {
-  color: white;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,26 +257,6 @@ footer section {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-}
-
-footer img {
-  max-width: 30px;
-  margin-right: 1rem;
-}
-
-footer a {
-  text-decoration: none;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-bottom: .2rem;
 }
 
 .footer-title {
@@ -223,11 +272,10 @@ footer a {
 }
 
 @media only screen and (min-width: 768px) {
-  header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+  .firstArticle div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -235,14 +283,31 @@ footer a {
         -ms-flex-align: center;
             align-items: center;
   }
-  .firstSection {
-    -webkit-box-orient: horizontal;
+  .firstArticle figure {
+    width: clamp(100px, 200px, 250px);
+    display: block;
+  }
+  .firstArticle img {
+    height: clamp(100px, 200px, 250px);
+    border-radius: 25px;
+  }
+  .secondArticle {
+    width: 92vw;
+    display: inherit;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .secondArticle ul {
+    margin-bottom: 1rem;
+  }
+  .secondArticle ul li {
+    width: 70vw;
+    text-align: left;
   }
   .buttons {
     -webkit-box-pack: space-evenly;
@@ -270,29 +335,36 @@ footer a {
         -ms-flex-align: center;
             align-items: center;
   }
+  .conteudo-dinamico article figure {
+    display: block;
+  }
+  .conteudo-dinamico article figure img {
+    width: clamp(300px, 20vw, 600px);
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 10px 10px #ecb2ec;
+            box-shadow: 5px 5px 10px 10px #ecb2ec;
+  }
   .conteudo-dinamico .row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  .price-table {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1080px) {
+  .firstArticle {
+    width: 50vw;
   }
-  .price-table h2 {
-    text-align: center;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+  .secondArticle {
+    width: 50vw;
   }
-  .price-table p {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+  .secondArticle ul {
+    margin-bottom: 1rem;
+  }
+  .secondArticle ul li {
+    width: 30vw;
+    margin-bottom: .5rem;
   }
 }
 /*# sourceMappingURL=home.css.map */

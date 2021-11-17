@@ -20,7 +20,7 @@ class View {
 
     public static function render($view , $vars = []){
         $vars = array_merge(self::$vars,$vars);
-    
+        
         if(empty($vars)) return self::getContentView($view);
 
         $keys = array_keys($vars);
