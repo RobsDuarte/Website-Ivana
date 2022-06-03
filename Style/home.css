@@ -39,8 +39,9 @@ p {
 header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ecb2ec), to(#f9e5f9));
   background-image: linear-gradient(to bottom, #ecb2ec, #f9e5f9);
-  color: darkorchid;
+  color: black;
   height: 40vh;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -70,7 +71,20 @@ header div {
   text-transform: lowercase;
 }
 
+header span {
+  font-family: 'Dancing Script', cursive;
+  color: darkorchid;
+  font-size: 1.2rem;
+  font-weight: bold;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: relative;
+  right: -120px;
+  top: -40px;
+}
+
 .firstSection {
+  background-color: whitesmoke;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -81,11 +95,22 @@ header div {
 }
 
 .firstArticle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: whitesmoke;
   border-radius: 1rem;
-  -webkit-box-shadow: 4px 4px 5px 2px darkorchid;
-          box-shadow: 4px 4px 5px 2px darkorchid;
-  width: 92vw;
+  width: 90vw;
   padding: 5px;
 }
 
@@ -96,20 +121,42 @@ header div {
 }
 
 .firstArticle figure {
-  display: none;
+  display: inline-block;
 }
 
 .firstArticle figure img {
-  -webkit-box-shadow: 5px 5px 5px 2px grey;
-          box-shadow: 5px 5px 5px 2px grey;
+  -webkit-box-shadow: 3px 3px 5px 2px grey;
+          box-shadow: 3px 3px 5px 2px grey;
+  width: clamp(100px, 3vw, 150px);
+  border-radius: 2rem;
+}
+
+.firstArticle div {
+  display: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .secondArticle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: whitesmoke;
   border-radius: 1rem;
-  -webkit-box-shadow: -4px 4px 5px 2px darkorchid;
-          box-shadow: -4px 4px 5px 2px darkorchid;
-  width: 95vw;
+  width: 90vw;
+  margin-bottom: 10px;
   padding-left: 20px;
 }
 
@@ -159,6 +206,7 @@ header div {
 
 .buttons div {
   gap: 1rem;
+  cursor: pointer;
   display: inherit;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -167,7 +215,6 @@ header div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
 }
 
 .buttons p {
@@ -201,6 +248,7 @@ header div {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  border-bottom: 4px solid darkorchid;
 }
 
 .conteudo-dinamico {
@@ -273,26 +321,17 @@ footer section {
 
 @media only screen and (min-width: 768px) {
   .firstArticle div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .firstArticle figure {
-    width: clamp(100px, 200px, 250px);
-    display: block;
-  }
-  .firstArticle img {
-    height: clamp(100px, 200px, 250px);
-    border-radius: 25px;
+    width: 100%;
   }
   .secondArticle {
-    width: 92vw;
+    width: 90vw;
     display: inherit;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -313,6 +352,9 @@ footer section {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .conteudo-dinamico h2 {
     text-align: center;

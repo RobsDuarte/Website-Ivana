@@ -22,8 +22,8 @@ html{
 body{
     font-family: "Trebuchet MS", Helvetica, sans-serif;   
     line-height: 1.6;
-    min-height: 100vh;
-    background-color:$light-pink;             
+    min-height: 100vh;    
+    background-color:$light-pink;               
 }
 
 @mixin text-align-center{
@@ -70,40 +70,56 @@ p{
 
 header{    
     background-image:linear-gradient(to bottom,$pink,$light-pink);
-    color: $purple;    
-    height: 40vh;      
+    color: $color-primary;    
+    height: 40vh;     
+    width: 100%;
     justify-content: center;
     align-items: center;   
     flex-direction: column; 
     font-size: 2rem;           
     display: flex;    
     @include margin-bottom;             
-       
+   
     h1{       
         @include text-align-center; 
         font-family: 'Fruktur', cursive;    
-        text-transform: uppercase;                                                              
+        text-transform: uppercase;                                                                           
     }  
 
     div{        
         font-size: 2rem;  
         font-family: 'Dancing Script', cursive;  
-        text-transform: lowercase;                                                    
+        text-transform: lowercase;                                                         
+    }
+    span
+    {
+        font-family: 'Dancing Script', cursive;
+        color: $purple;
+        font-size: 1.2rem; 
+        font-weight: bold;     
+        transform:rotate(-45deg);
+        position: relative;
+        right: -120px;
+        top: -40px;       
     }   
 }
 
-.firstSection{        
+.firstSection{   
+    background-color: whitesmoke;    
     flex-flow: column wrap;         
-    align-items: center;           
+    align-items: center;        
 }
 
 .firstArticle{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
     background-color: whitesmoke;
-    border-radius:1rem ;
-    box-shadow: 4px 4px 5px 2px $purple;    
-    width: 92vw;
-    padding: 5px;     
-
+    border-radius:1rem ;        
+    width: 90vw;    
+    padding: 5px;       
+    
     h2
     {
         text-align: center;
@@ -111,34 +127,43 @@ header{
         font-size: 2rem;        
     }   
     figure
-    {
-        display: none;
+    {  
+        display: inline-block;
         img{
-            box-shadow: 5px 5px 5px 2px grey;
-        }
+            box-shadow: 3px 3px 5px 2px grey;
+            width: clamp(100px,3vw,150px); 
+            border-radius: 2rem;               
+        }       
+    }  
+    div{
+      display: inherit;
+      flex-direction: column;
+      align-items: center;
     }
-  
 }
 
 .secondArticle
 {
+    display: flex; 
+    align-items: center;  
+    flex-direction: column; 
     background-color: whitesmoke;
     border-radius:1rem ;
-    box-shadow: -4px 4px 5px 2px $purple;    
-    width:95vw;    
-    padding-left:20px; 
-
+    width: 90vw;    
+    margin-bottom: 10px;   
+    padding-left:20px;  
+    
     h2
     {
         text-align: center;
         font-family: 'Dancing Script', cursive;        
         font-size: 2rem;
     }
-    figure{
+    figure{        
         img{
-            width: clamp(100px,3vw,150px);            
+            width: clamp(100px,3vw,150px);              
         }
-    }
+    }    
     div
     {
         display: flex;
@@ -152,7 +177,7 @@ header{
 .buttons{       
     flex-flow: row wrap;    
     justify-content: center;    
-        
+      
     button{
         background: none;
         border: none;
@@ -161,21 +186,23 @@ header{
         color: $light-pink; 
         font-family: 'Mochiy Pop P One', sans-serif; 
         text-transform: uppercase;  
-        text-shadow: 0 0 3px $purple,0 0 5px $purple;        
-
+        text-shadow: 0 0 3px $purple,0 0 5px $purple; 
+           
     }   
     div{  
-        @include gap;  
+        @include gap; 
+        cursor: pointer;  
         display: inherit;
         flex-flow: column wrap;
-        align-items: center;               
-        cursor: pointer;                          
+        align-items: center;                   
     }     
     p{         
         font-weight: 600;
-        font-size: 1.5rem;
-    }      
+        font-size: 1.5rem;        
+    }          
 }
+
+
 
 .content{    
     display: flex;
@@ -192,7 +219,9 @@ header{
         text-transform: uppercase;  
         text-shadow: 0 0 3px $purple,0 0 5px $purple;        
         margin-left: 10px;        
-        align-self: center;    
+        align-self: center; 
+        border-bottom: 4px solid $purple;
+             
     } 
 }
 
@@ -244,41 +273,37 @@ footer{
     padding-bottom: 1rem;    
 }
   
-@media only screen and  (min-width:768px){       
-    .firstArticle{
-                 
-        div{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            
-        }
-        figure{            
-            width: clamp(100px,200px,250px); 
-            display: block;                                         
-        }
-        img{                    
-            height: clamp(100px,200px,250px); 
-            border-radius: 25px;             
-        }        
-    } 
-    .secondArticle
+@media only screen and  (min-width:768px){      
+    .firstArticle
     {
-        width: 92vw;
+      
+        div
+        {
+            flex-direction: row;
+            justify-content: space-evenly;
+            
+            width: 100%;
+        }
+    }
+    .secondArticle
+    {       
+        width: 90vw;
         display: inherit;
         flex-direction: column;
         align-items: center; 
-
+        
         ul{
             margin-bottom: 1rem;
             li{                
                 width: 70vw;
-                text-align: left;               
+                text-align: left;                         
             }
         }
-    }
+    }    
     .buttons{
-        justify-content: space-evenly;                             
+        justify-content: space-evenly;  
+        align-items: center;        
+                                   
     }
     .conteudo-dinamico{ 
         @include block-formatation;                
@@ -308,6 +333,7 @@ footer{
     .firstArticle
     {
         width: 50vw;
+        
     }
 
     .secondArticle
